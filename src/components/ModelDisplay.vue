@@ -46,7 +46,7 @@ export default {
 
         const gltfLoader = new THREE.GLTFLoader();
 
-        gltfLoader.load("https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/models/UE_MEGABOOM.gltf", (model) => {
+        gltfLoader.load("https://raw.githubusercontent.com/RunItBack1127/bumbox_portfolio_website/main/src/assets/models/UE_MEGABOOM.gltf", (model) => {
             const speakerModel = model.scene;
 
             const sBBox = new THREE.Box3().setFromObject(speakerModel);

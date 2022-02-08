@@ -23,7 +23,7 @@
                                 element: '#feature-contents'
                             })">
                             <div id="cta-content">
-                                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/icons/explore-features-icon.png">
+                                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox_portfolio_website/main/src/assets/icons/explore-features-icon.png">
                                 <p>See Features</p>
                             </div>
                         </button>

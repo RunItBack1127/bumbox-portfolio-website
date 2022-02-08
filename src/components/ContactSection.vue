@@ -12,7 +12,7 @@
                 <h5>Which operating system are you currently using?</h5>
                 <div id="pc-mobile-container">
                     <ul>
-                        <li @click="this.selectedOS = this.selectedOS === os.osIndex ? 0 : os.osIndex" :class="this.selectedOS === os.osIndex ? 'selected-os' : ''" v-for="os of osList" :key="os.osIndex">
+                        <li v-for="(os, osIndex) of osList" :key="os.key" @click="this.selectedOS = this.selectedOS === osIndex ? -1 : osIndex" :class="this.selectedOS === osIndex || this.selectedOS === -1 ? 'selected-os' : ''">
                             <img :src="os.iconURL">
                         </li>
                     </ul>
@@ -47,7 +47,7 @@ export default {
     },
     setup() {
         const store = useStore();
-        const selectedOS = ref(0);
+        const selectedOS = ref(-1);
         
         return {
             osList: [...store.state.PLATFORM_OS_LIST.pc,
@@ -141,7 +141,7 @@ div {
                         justify-content: center;
                         align-items: center;
                         cursor: pointer;
-                        opacity: 0.5;
+                        opacity: 0.25;
 
                         &.selected-os {
                             opacity: 1.0;
