@@ -185,7 +185,7 @@ section {
 }
 
 @font-face {
-    src: url('https://raw.githubusercontent.com/RunItBack1127/bumbox_portfolio_website/main/src/assets/fonts/Expansiva.otf');
+    src: url('https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/fonts/Expansiva.otf');
     font-family: 'Expansiva';
 }
 </style>
