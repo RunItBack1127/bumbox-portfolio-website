@@ -2,24 +2,22 @@
   <main id="site-landing-content">
     <div id="site-gradient-background"></div>
     <model-display @modelLoaded="initializeSiteContent" :modelComponentBlur="this.modelComponentBlur" />
-    <section :class="this.displaySiteContent === true ? 'display-site-content' : ''" id="site-intro-content">
+    <section class="site-transition-content" :class="this.displaySiteContent === true ? 'display-site-content' : ''" id="site-intro-content">
       <site-navigation-menu @scroll="scrollTo" />
       <site-hero @scroll="scrollTo" />
     </section>
     <div :class="this.showScrollMenu ? 'show-scroll-menu' : ''" id="scroll-navigation-menu">
       <site-navigation-menu @scroll="scrollTo" />
     </div>
-    <div :class="this.displaySiteContent === true ? 'display-site-content' : ''" id="site-contents">
-      <speaker-brand-gallery />
-      <content-section-header :sectionTitle="'Features'" />
-      <app-features />
-      <content-section-header :sectionTitle="'Download'" />
-      <download-app />
-      <content-section-header :sectionTitle="'Contact Us'" />
-      <contact-section />
-      <socials-advert />
-      <site-footer />
-    </div>
+    <speaker-brand-gallery :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
+    <content-section-header :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Features'" />
+    <app-features :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
+    <content-section-header :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Download'" />
+    <download-app :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
+    <content-section-header :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Contact Us'" />
+    <contact-section :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
+    <socials-advert :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
+    <site-footer :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
   </main>
 </template>
 
@@ -162,39 +160,25 @@ div {
     z-index: 2000;
     width: 100vw;
     opacity: 0.0;
+    pointer-events: none;
     transition: opacity 750ms ease-in-out;
 
     &.show-scroll-menu {
       opacity: 1.0;
+      pointer-events: all;
     }
   }
 }
 
-section {
+.site-transition-content {
+  pointer-events: none;
+  opacity: 0.0;
+  transition: opacity 300ms ease-in;
+  z-index: 1000;
 
-  &#site-intro-content {
-    pointer-events: none;
-    opacity: 0.0;
-    transition: opacity 300ms ease-in;
-    z-index: 1000;
-
-    &.display-site-content {
-      opacity: 1.0;
-    }
-  }
-}
-
-div {
-
-  &#site-contents {
-    pointer-events: none;
-    opacity: 0.0;
-    transition: opacity 300ms ease-in;
-    z-index: 1000;
-
-    &.display-site-content {
-      opacity: 1.0;
-    }
+  &.display-site-content {
+    opacity: 1.0;
+    pointer-events: all;
   }
 }
 
