@@ -2,22 +2,24 @@
   <main id="site-landing-content">
     <div id="site-gradient-background"></div>
     <model-display @modelLoaded="initializeSiteContent" :modelComponentBlur="this.modelComponentBlur" />
-    <section :class="this.displaySiteContent ? 'display-site-content' : ''" id="site-intro-content">
+    <section :class="this.displaySiteContent === true ? 'display-site-content' : ''" id="site-intro-content">
       <site-navigation-menu @scroll="scrollTo" />
       <site-hero @scroll="scrollTo" />
     </section>
     <div :class="this.showScrollMenu ? 'show-scroll-menu' : ''" id="scroll-navigation-menu">
       <site-navigation-menu @scroll="scrollTo" />
     </div>
-    <speaker-brand-gallery />
-    <content-section-header :sectionTitle="'Features'" />
-    <app-features />
-    <content-section-header :sectionTitle="'Download'" />
-    <download-app />
-    <content-section-header :sectionTitle="'Contact Us'" />
-    <contact-section />
-    <socials-advert />
-    <site-footer />
+    <div :class="this.displaySiteContent === true ? 'display-site-content' : ''" id="site-contents">
+      <speaker-brand-gallery />
+      <content-section-header :sectionTitle="'Features'" />
+      <app-features />
+      <content-section-header :sectionTitle="'Download'" />
+      <download-app />
+      <content-section-header :sectionTitle="'Contact Us'" />
+      <contact-section />
+      <socials-advert />
+      <site-footer />
+    </div>
   </main>
 </template>
 
@@ -171,15 +173,27 @@ div {
 section {
 
   &#site-intro-content {
-
-    opacity: 0.0;
     pointer-events: none;
+    opacity: 0.0;
     transition: opacity 300ms ease-in;
-    z-index: 1;
+    z-index: 1000;
 
     &.display-site-content {
       opacity: 1.0;
-      pointer-events: all;
+    }
+  }
+}
+
+div {
+
+  &#site-contents {
+    pointer-events: none;
+    opacity: 0.0;
+    transition: opacity 300ms ease-in;
+    z-index: 1000;
+
+    &.display-site-content {
+      opacity: 1.0;
     }
   }
 }

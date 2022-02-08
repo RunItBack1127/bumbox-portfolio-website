@@ -5,22 +5,22 @@
         </header>
         <div :class="this.hoverGalleryItems ? 'fade-gallery-items' : ''" @mouseenter="this.hoverGalleryItems = true" @mouseleave="this.hoverGalleryItems = false" id="logo-gallery">
             <article>
-                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/logos/jbl-logo.png">
+                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/logos/jbl-logo.png">
             </article>
             <article>
-                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/logos/ultimate-ears-logo.png">
+                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/logos/ultimate-ears-logo.png">
             </article>
             <article>
-                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/logos/bose-logo.png">
+                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/logos/bose-logo.png">
             </article>
             <article>
-                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/logos/sonos-logo.png">
+                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/logos/sonos-logo.png">
             </article>
             <article>
-                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/logos/anker-logo.png">
+                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/logos/anker-logo.png">
             </article>
             <article>
-                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/logos/sony-logo.png">
+                <img src="https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/logos/sony-logo.png">
             </article>
         </div>
     </section>

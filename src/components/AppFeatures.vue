@@ -3,19 +3,19 @@
         <div id="feature-contents" :class="this.fadeAppFeatures ? 'fade-app-features' : ''" @mouseenter="this.fadeAppFeatures = true" @mouseleave="this.fadeAppFeatures = false">
             <article>
                 <app-feature
-                    :featureIcon="'https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/icons/remote-on-off-icon.png'"
+                    :featureIcon="'https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/icons/remote-on-off-icon.png'"
                     :featureName="'Remote Power On/Off'"
                     :featureDesc="'Effortlessly power on your speaker with any of your devices, without it even being in reach.'" />
             </article>
             <article>
                 <app-feature
-                    :featureIcon="'https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/icons/volume-icon.png'"
+                    :featureIcon="'https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/icons/volume-icon.png'"
                     :featureName="'Advanced Volume Controls'"
                     :featureDesc="'Raise or lower the volume and balance of multiple speakers simultaneously, or just a single one, with one touch.'" />
             </article>
             <article>
                 <app-feature
-                    :featureIcon="'https://raw.githubusercontent.com/RunItBack1127/bumbox_website/main/src/assets/icons/customization-icon.png'"
+                    :featureIcon="'https://raw.githubusercontent.com/RunItBack1127/bumbox-portfolio-website/main/src/assets/icons/customization-icon.png'"
                     :featureName="'Integrated Customization'"
                     :featureDesc="'Test description to describe the remote on off thing, this is taking forever I should check my phone'" />
             </article>
