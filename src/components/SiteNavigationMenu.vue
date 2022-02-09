@@ -57,11 +57,9 @@ header {
         
         &#navigation-content {
             display: flex;
-            flex: 1;
             justify-content: space-between;
             align-items: center;
-            width: 80%;
-            max-width: 1150px;
+            width: 85%;
         }
 
         h1 {
@@ -102,6 +100,12 @@ header {
                 }
             }
         }
+    }
+}
+
+@media screen and (min-width: 1919px) {
+    header {
+        height: 110px;
     }
 }
 </style>

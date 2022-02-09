@@ -87,29 +87,35 @@ div {
 
     &#intro-content {
         width: 85%;
+        height: 100%;
+        max-height: 700px;
+        padding: 30px 0 50px;
 
         #intro-content-align {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
             width: 100%;
+            height: 100%;
             max-width: 725px;
 
             #hero-header {
                 font-size: 2.5rem;
                 font-weight: 800;
                 line-height: 3.25rem;
-                margin-bottom: 30px;
             }
 
             #hero-subtext {
                 font-size: 1.35rem;
                 font-weight: 400;
-                margin-bottom: 40px;
                 opacity: 0.6;
             }
 
             #intro-ctas {
 
                 display: flex;
-                flex: 1;
                 justify-content: space-between;
                 align-items: center;
                 width: 100%;
@@ -177,6 +183,20 @@ div {
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1919px) {
+    div {
+        &#intro-content-align {
+            min-width: 900px;
+
+            #intro-ctas {
+                span {
+                    height: 100px !important;
                 }
             }
         }

@@ -126,6 +126,7 @@ export default {
 
   background: #fff;
   color: #000;
+  overflow-x: hidden;
 }
 
 a {
@@ -146,6 +147,7 @@ ul {
   height: 100vh;
   background: linear-gradient(45deg, #fff 60%, rgba(0, 0, 0, 0.1) 100%);
   z-index: 1000;
+  overflow-x: hidden;
 }
 
 div {
@@ -179,6 +181,12 @@ div {
   &.display-site-content {
     opacity: 1.0;
     pointer-events: all;
+  }
+}
+
+@media screen and (min-width: 1919px) {
+  :root {
+    font-size: 25px;
   }
 }
 
