@@ -234,7 +234,7 @@ div {
     }
 }
 
-@media screen and (max-height: 768px) {
+@media screen and (max-width: 414px) and (max-height: 768px) {
     section {
         min-height: 700px !important;
     }
