@@ -41,7 +41,9 @@ div {
 
 @media screen and (max-width: 644px) {
     div {
-        padding: 0;
+        padding: 25px 0;
+        color: #fff;
+        background: #111;
 
         hr {
             display: none;
