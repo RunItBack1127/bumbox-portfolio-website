@@ -41,12 +41,14 @@ div {
 
 @media screen and (max-width: 644px) {
     div {
+        padding: 0;
+
         hr {
             display: none;
         }
 
         h3 {
-            width: 100%;
+            width: 100% !important;
             padding: 0;
         }
     }

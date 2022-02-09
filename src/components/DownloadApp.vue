@@ -72,6 +72,7 @@ section {
         max-width: 700px;
         line-height: 2rem;
         margin-bottom: 30px;
+        width: 90%;
     }
 
     #platform-os-container {
@@ -156,6 +157,25 @@ section {
                     img {
                         width: 50px;
                         height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 460px) {
+    #pc-mobile-container {
+        section {
+            ul {
+                gap: 0 20px !important;
+
+                li {
+                    a {
+                        img {
+                            width: 30px !important;
+                            height: auto !important;
+                        }
                     }
                 }
             }
