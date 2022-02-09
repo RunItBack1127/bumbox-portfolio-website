@@ -38,4 +38,17 @@ div {
         width: 300px;
     }
 }
+
+@media screen and (max-width: 644px) {
+    div {
+        hr {
+            display: none;
+        }
+
+        h3 {
+            width: 100%;
+            padding: 0;
+        }
+    }
+}
 </style>

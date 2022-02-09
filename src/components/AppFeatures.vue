@@ -76,4 +76,13 @@ div {
         }
     }
 }
+
+@media screen and (max-width: 1321px) {
+    div {
+        &#feature-contents {
+            max-width: 500px;
+            grid-template-columns: 1fr;
+        }
+    }
+}
 </style>
