@@ -33,6 +33,15 @@
                         element: '#download-contents'
                     })" id="download-link">Download</span>
             </nav>
+            <div id="responsive-hamburger">
+                <button>
+                    <svg width="30" height="21" viewBox="0 0 30 21">
+                        <rect x="0" y="0" width="30" height="1"/>
+                        <rect x="0" y="10" width="30" height="1"/>
+                        <rect x="0" y="20" width="30" height="1"/>
+                    </svg>
+                </button>
+            </div>
         </nav>
     </header>
 </template>
@@ -60,46 +69,77 @@ header {
             justify-content: space-between;
             align-items: center;
             width: 85%;
-        }
 
-        h1 {
-            font-family: 'Expansiva', sans-serif;
-            text-transform: uppercase;
-            font-weight: 200;
-            font-size: 2rem;
-            letter-spacing: 0.5rem;
-        }
-
-        &#navigation-socials {
-
-            a svg {
-                width: 22.5px;
-                height: 22.5px;
+            h1 {
+                font-family: 'Expansiva', sans-serif;
+                text-transform: uppercase;
+                font-weight: 200;
+                font-size: 2rem;
+                letter-spacing: 0.5rem;
             }
 
-            a:not(:last-child) {
-                margin-right: 30px;
-            }
-        }
+            #navigation-socials {
 
-        &#site-links {
-
-            span {
-                cursor: pointer;
-
-                &:not(:last-child) {
-                    margin-right: 45px;
+                a svg {
+                    width: 22.5px;
+                    height: 22.5px;
                 }
 
-                &#download-link {
-                    background-color: #000;
+                a:not(:last-child) {
+                    margin-right: 30px;
+                }
+            }
+
+            #site-links {
+
+                span {
+                    cursor: pointer;
+
+                    &:not(:last-child) {
+                        margin-right: 45px;
+                    }
+
+                    &#download-link {
+                        background-color: #000;
+                        border: none;
+                        border-radius: 20px;
+                        color: #fff;
+                        padding: 15px 40px;
+                    }
+                }
+            }
+
+            #responsive-hamburger {
+                display: none;
+
+                button {
+                    background: transparent;
                     border: none;
-                    border-radius: 20px;
-                    color: #fff;
-                    padding: 15px 40px;
+
+                    svg {
+                        rect {
+                            fill: #000;
+                        }
+                    }
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #site-links {
+        display: none;
+    }
+
+    #responsive-hamburger {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #navigation-socials {
+        display: none;
     }
 }
 

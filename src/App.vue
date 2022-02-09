@@ -184,6 +184,12 @@ div {
   }
 }
 
+@media screen and (max-width: 576px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
 @media screen and (min-width: 1919px) {
   :root {
     font-size: 25px;
