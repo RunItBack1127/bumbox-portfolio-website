@@ -90,7 +90,7 @@ div {
     &#intro-content {
         width: 85%;
         height: 100%;
-        max-height: 750px;
+        max-height: 775px;
         padding: 30px 0 50px;
 
         #intro-content-align {
@@ -193,14 +193,16 @@ div {
 }
 
 @media screen and (max-width: 576px) {
+    
+}
+
+@media screen and (max-width: 768px) {
     #intro-content-align {
         h1, h2 {
             text-align: center;
         }
     }
-}
 
-@media screen and (max-width: 768px) {
     #intro-ctas {
         flex-direction: column;
 
@@ -229,6 +231,12 @@ div {
                 }
             }
         }
+    }
+}
+
+@media screen and (max-height: 768px) {
+    section {
+        min-height: 700px !important;
     }
 }
 </style>
