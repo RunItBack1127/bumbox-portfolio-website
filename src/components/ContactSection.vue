@@ -78,6 +78,7 @@ div {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0 200px;
+        width: 80%;
 
         #email-desc-os-container {
             width: 100%;
@@ -205,6 +206,18 @@ div {
                 pointer-events: none;
                 opacity: 0.5;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1321px) {
+    div {
+        &#contact-contents {
+            grid-template-columns: 1fr;
+            gap: 100px 0;
+            width: 80%;
+            max-width: 400px;
+            margin-top: 25px;
         }
     }
 }
