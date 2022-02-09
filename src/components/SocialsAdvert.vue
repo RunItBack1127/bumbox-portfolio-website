@@ -85,4 +85,21 @@ div {
         }
     }
 }
+
+@media screen and (max-width: 388px) {
+    div {
+        &#socials-content {
+            nav {
+                ul {
+                    li {
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 </style>

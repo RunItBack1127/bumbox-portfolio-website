@@ -60,7 +60,7 @@ section {
 
     h2 {
         text-align: center;
-        width: 100%;
+        width: 90%;
         max-width: 700px;
         font-size: 1.5rem;
         line-height: 2.25rem;
@@ -70,9 +70,9 @@ section {
 
     #logo-gallery {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         align-content: center;
         gap: 100px 150px;
+        grid-template-columns: repeat(3, 1fr);
 
         &.fade-gallery-items {
 
@@ -96,6 +96,18 @@ section {
                 height: auto;
             }
         }
+    }
+}
+
+@media screen and (max-width: 644px) {
+    #logo-gallery {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media screen and (min-width: 645px) and (max-width: 980px) {
+    #logo-gallery {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 </style>

@@ -29,6 +29,8 @@ article {
     border: 1px solid #000;
     border-radius: 20px;
     min-height: 500px;
+    max-width: 500px;
+    font-size: 20px;
     box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px, rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
 
     figure {
@@ -51,19 +53,25 @@ article {
     }
 
     h4 {
-        font-size: 1.25rem;
-        letter-spacing: 0.15rem;
+        font-size: 1.25em;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
         text-align: center;
         min-height: 100px;
-        width: 340px;
+        width: 80%;
     }
 
     p {
         text-align: center;
-        font-size: 1rem;
+        font-size: 1em;
         opacity: 0.75;
-        width: 350px;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    article {
+        font-size: 16px;
     }
 }
 </style>

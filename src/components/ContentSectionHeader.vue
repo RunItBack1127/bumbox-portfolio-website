@@ -38,4 +38,21 @@ div {
         width: 300px;
     }
 }
+
+@media screen and (max-width: 644px) {
+    div {
+        padding: 25px 0;
+        color: #fff;
+        background: #111;
+
+        hr {
+            display: none;
+        }
+
+        h3 {
+            width: 100% !important;
+            padding: 0;
+        }
+    }
+}
 </style>

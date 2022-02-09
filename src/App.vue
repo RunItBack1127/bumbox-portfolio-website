@@ -1,5 +1,5 @@
 <template>
-  <main id="site-landing-content">
+  <main id="site-landing-content" v-on:scroll="updateScrollMenu">
     <div id="site-gradient-background"></div>
     <model-display @modelLoaded="initializeSiteContent" :modelComponentBlur="this.modelComponentBlur" />
     <section class="site-transition-content" :class="this.displaySiteContent === true ? 'display-site-content' : ''" id="site-intro-content">
@@ -94,13 +94,12 @@ export default {
         offset: -250,
         duration: 1500
       });
+    },
+    updateScrollMenu: function() {
+      this.showScrollMenu = document.querySelector('#site-landing-content').scrollTop >= 500;
     }
   },
   mounted() {
-    window.addEventListener("scroll", () => {
-      this.showScrollMenu = window.scrollY >= 500;
-    });
-
     document.title = "Bumbox\xa0\xa0|\xa0\xa0Universal Bluetooth Dashboard";
   }
 };
@@ -126,6 +125,7 @@ export default {
 
   background: #fff;
   color: #000;
+  overflow-x: hidden;
 }
 
 a {
@@ -146,6 +146,7 @@ ul {
   height: 100vh;
   background: linear-gradient(45deg, #fff 60%, rgba(0, 0, 0, 0.1) 100%);
   z-index: 1000;
+  overflow-x: hidden;
 }
 
 div {
@@ -157,7 +158,7 @@ div {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2000;
+    z-index: 10000;
     width: 100vw;
     opacity: 0.0;
     pointer-events: none;
@@ -179,6 +180,24 @@ div {
   &.display-site-content {
     opacity: 1.0;
     pointer-events: all;
+  }
+}
+
+@media screen and (max-width: 388px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 389px) and (max-width: 576px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1919px) {
+  :root {
+    font-size: 25px;
   }
 }
 
