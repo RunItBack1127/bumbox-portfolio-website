@@ -3,18 +3,18 @@
     <div id="site-gradient-background"></div>
     <model-display @modelLoaded="initializeSiteContent" :modelComponentBlur="this.modelComponentBlur" />
     <section class="site-transition-content" :class="this.displaySiteContent === true ? 'display-site-content' : ''" id="site-intro-content">
-      <site-navigation-menu @scroll="scrollTo" />
-      <site-hero @scroll="scrollTo" />
+      <site-navigation-menu @scroll="scrollToElement" />
+      <site-hero @scroll="scrollToElement" />
     </section>
     <div :class="this.showScrollMenu ? 'show-scroll-menu' : ''" id="scroll-navigation-menu">
-      <site-navigation-menu @scroll="scrollTo" />
+      <site-navigation-menu @scroll="scrollToElement" />
     </div>
     <speaker-brand-gallery :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
-    <content-section-header :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Features'" />
+    <content-section-header id="features-header" :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Features'" />
     <app-features :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
-    <content-section-header :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Download'" />
+    <content-section-header id="download-header" :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Download'" />
     <download-app :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
-    <content-section-header :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Contact Us'" />
+    <content-section-header id="contact-header" :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Contact Us'" />
     <contact-section :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
     <socials-advert :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
     <site-footer :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
@@ -35,7 +35,7 @@ import ContactSection from '@/components/ContactSection.vue';
 
 import { ref } from 'vue';
 import * as TWEEN from '@tweenjs/tween.js';
-import scrollToElement from 'scroll-to-element';
+import { scrollIntoView } from 'scroll-js';
 
 export default {
   name: 'App',
@@ -84,10 +84,9 @@ export default {
     }
   },
   methods: {
-    scrollTo: function({ element }) {
-      scrollToElement(element, {
-        offset: -250,
-        duration: 1500
+    scrollToElement: function({ element }) {
+      scrollIntoView(document.querySelector(element), document.querySelector('#site-landing-content'), {
+        duration: 500
       });
     },
     updateScrollMenu: function() {
