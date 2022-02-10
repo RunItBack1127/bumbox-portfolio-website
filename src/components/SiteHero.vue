@@ -234,9 +234,9 @@ div {
     }
 }
 
-@media screen and (max-width: 414px) and (max-height: 768px) {
+@media screen and (max-width: 860px) and (max-height: 768px) {
     section {
-        min-height: 700px !important;
+        min-height: 750px !important;
     }
 }
 </style>

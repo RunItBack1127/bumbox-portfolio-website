@@ -33,9 +33,9 @@ import SocialsAdvert from '@/components/SocialsAdvert.vue';
 import SiteFooter from '@/components/SiteFooter.vue';
 import ContactSection from '@/components/ContactSection.vue';
 
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import * as TWEEN from '@tweenjs/tween.js';
-import * as scrollToElement from 'scroll-to-element';
+import scrollToElement from 'scroll-to-element';
 
 export default {
   name: 'App',
@@ -75,17 +75,12 @@ export default {
     }
     requestAnimationFrame(animateBlur);
 
-    const initializeSiteContent = computed(() => {
-      modelObfuscator.start();
-      return null;
-    });
-
     return {
       modelComponentBlur,
       displaySiteContent,
       fadeFeatures,
       showScrollMenu,
-      initializeSiteContent
+      initializeSiteContent: modelObfuscator.start()
     }
   },
   methods: {
@@ -144,7 +139,6 @@ ul {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(45deg, #fff 60%, rgba(0, 0, 0, 0.1) 100%);
   z-index: 1000;
   overflow-x: hidden;
 }
@@ -168,6 +162,16 @@ div {
       opacity: 1.0;
       pointer-events: all;
     }
+  }
+
+  &#site-gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #fff 60%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: -10;
   }
 }
 

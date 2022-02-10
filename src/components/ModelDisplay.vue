@@ -37,6 +37,8 @@ export default {
         const camera = new THREE.PerspectiveCamera( 45, 2, 0.1, 100 );
         camera.position.set(0, 0, -0.3);
 
+        adjustModelSizing();
+
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
         controls.enableRotate = false;
@@ -64,11 +66,15 @@ export default {
         });
 
         window.addEventListener("resize", () => {
+            adjustModelSizing();
+        });
+
+        function adjustModelSizing() {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.render(scene, camera);
-        });
+        }
 
         function animate() {
             requestAnimationFrame(animate);
@@ -102,7 +108,6 @@ export default {
     top: 0;
     left: 0;
     width: 100vw;
-    min-width: 576px;
     height: 100vh;
     background-color: transparent;
     transform: translateY(25%) translateX(35%) scale(1.5) rotate(-45deg);
