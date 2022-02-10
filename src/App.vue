@@ -10,12 +10,12 @@
       <site-navigation-menu @scroll="scrollToElement" />
     </div>
     <speaker-brand-gallery :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
-    <content-section-header id="features-header" :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Features'" />
-    <app-features :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
-    <content-section-header id="download-header" :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Download'" />
-    <download-app :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
-    <content-section-header id="contact-header" :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Contact Us'" />
-    <contact-section :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
+    <content-section-header :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Features'" />
+    <app-features id="feature-contents" :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
+    <content-section-header :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Download'" />
+    <download-app id="download-contents" :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
+    <content-section-header :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" :sectionTitle="'Contact Us'" />
+    <contact-section id="contact-contents" :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
     <socials-advert :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
     <site-footer :class="this.displaySiteContent === true ? 'display-site-content' : ''" class="site-transition-content" />
   </main>
@@ -35,7 +35,6 @@ import ContactSection from '@/components/ContactSection.vue';
 
 import { ref } from 'vue';
 import * as TWEEN from '@tweenjs/tween.js';
-import { scrollIntoView } from 'scroll-js';
 
 export default {
   name: 'App',
@@ -85,8 +84,16 @@ export default {
   },
   methods: {
     scrollToElement: function({ element }) {
-      scrollIntoView(document.querySelector(element), document.querySelector('#site-landing-content'), {
-        duration: 500
+      const toElement = document.querySelector(element);
+      const toElementBox = toElement.getBoundingClientRect();
+      
+      const slc = document.querySelector('#site-landing-content');
+      const top = element === '#site-landing-content' ? 0 : toElementBox.top + slc.scrollTop;
+
+      slc.scrollTo({
+        top: top - 250,
+        left: 0,
+        behavior: 'smooth'
       });
     },
     updateScrollMenu: function() {

@@ -21,9 +21,9 @@
             </nav>
             <nav id="site-links">
                 <span @click="emitScroll('#site-landing-content')">Home</span>
-                <span @click="emitScroll('#features-header')">Features</span>
-                <span @click="emitScroll('#contact-header')">Contact</span>
-                <span @click="emitScroll('#download-header')" id="download-link">Download</span>
+                <span @click="emitScroll('#feature-contents')">Features</span>
+                <span @click="emitScroll('#contact-contents')">Contact</span>
+                <span @click="emitScroll('#download-contents')" id="download-link">Download</span>
             </nav>
             <div @click="this.showResponsiveMenu = true" id="responsive-hamburger">
                 <button>
