@@ -50,6 +50,7 @@ export default {
     emits: ['scroll', 'hide-responsive-menu'],
     methods: {
         emitScroll: function(element) {
+            this.$emit('hide-responsive-menu');
             this.$emit('scroll', element);
         }
     }

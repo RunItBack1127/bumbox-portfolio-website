@@ -38,7 +38,7 @@
     </header>
     <teleport to="body">
         <div v-if="this.showResponsiveMenu" id="responsive-menu-container">
-            <responsive-navigation-menu @hideResponsiveMenu="this.showResponsiveMenu = false" />
+            <responsive-navigation-menu @scroll="emitScroll" @hideResponsiveMenu="this.showResponsiveMenu = false" />
         </div>
     </teleport>
 </template>
@@ -63,7 +63,6 @@ export default {
     },
     methods: {
         emitScroll: function(element) {
-            this.showResponsiveMenu = false;
             this.$emit('scroll', {
                 element
             });
